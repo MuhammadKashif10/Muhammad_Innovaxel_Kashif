@@ -1,7 +1,7 @@
 
 # URL Shortener
 
-A simple URL shortener service built with Node.js, Express, and SQLite.
+A simple URL shortener service built with Node.js, Express, and SQLite. 
 
 ## Features
 - Shorten long URLs
