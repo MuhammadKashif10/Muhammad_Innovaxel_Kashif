@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', urlRoutes);
 
-// Redirect handler
 app.get('/:shortCode', async (req, res) => {
   const { shortCode } = req.params;
   const url = await getUrlByShortCode(shortCode);
