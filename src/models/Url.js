@@ -3,7 +3,6 @@ const path = require('path');
 const dbPath = path.resolve(__dirname, '../urlshortener.db');
 const db = new sqlite3.Database(dbPath);
 
-// Ensure table exists
 const initSql = `
   CREATE TABLE IF NOT EXISTS urls (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
