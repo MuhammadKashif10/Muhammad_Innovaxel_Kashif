@@ -3,7 +3,7 @@
 
 A simple URL shortener service built with Node.js, Express, and SQLite. 
 
-## Features
+## Features 
 - Shorten long URLs
 - Retrieve original URLs using short codes
 - Track access count and creation date
