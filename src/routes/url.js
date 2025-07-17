@@ -18,7 +18,6 @@ function generateShortCode(length = 6) {
   return code;
 }
 
-// Shorten a URL
 router.post('/shorten', async (req, res) => {
   const { originalUrl } = req.body;
   if (!originalUrl) return res.status(400).json({ error: 'Original URL required' });
@@ -32,7 +31,6 @@ router.post('/shorten', async (req, res) => {
   res.json({ shortCode });
 });
 
-// Get URL info and stats
 router.get('/url/:shortCode', async (req, res) => {
   const { shortCode } = req.params;
   const url = await getUrlByShortCode(shortCode);
@@ -40,7 +38,6 @@ router.get('/url/:shortCode', async (req, res) => {
   res.json(url);
 });
 
-// Update original URL
 router.put('/url/:shortCode', async (req, res) => {
   const { shortCode } = req.params;
   const { newUrl } = req.body;
@@ -50,7 +47,6 @@ router.put('/url/:shortCode', async (req, res) => {
   res.json({ message: 'Updated' });
 });
 
-// Delete short URL
 router.delete('/url/:shortCode', async (req, res) => {
   const { shortCode } = req.params;
   const deleted = await deleteUrl(shortCode);
@@ -58,7 +54,6 @@ router.delete('/url/:shortCode', async (req, res) => {
   res.json({ message: 'Deleted' });
 });
 
-// Get stats
 router.get('/url/:shortCode/stats', async (req, res) => {
   const { shortCode } = req.params;
   const stats = await getStats(shortCode);
